@@ -7,10 +7,11 @@ const useGetConversation = () => {
     const getConversation = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:8080/api/getusers", {
+        const response = await fetch("/api/getusers", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('userinfo'))?.accessToken}`
           },
           credentials: "include",
         });

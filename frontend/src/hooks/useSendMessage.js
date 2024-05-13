@@ -10,11 +10,12 @@ const useSendMessage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:8080/api/sendmessage/${selectedConversation?._id}`,
+        `/api/sendmessage/${selectedConversation?._id}`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('userinfo'))?.accessToken}`
           },
           credentials: "include",
           body: JSON.stringify({ message }),

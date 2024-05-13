@@ -77,6 +77,7 @@ exports.loginUser = async (req, res) => {
     const options = {
       httpOnly: true,
       secure: true,
+      sameSite: "strict",
     };
 
     return res

@@ -7,10 +7,11 @@ const { setAuthUser }=useAuthContext()
 const logout =async ()=>{
     setLoading(true);
     try {
-        const response= await fetch("http://localhost:8080/api/logout",{
+        const response= await fetch("/api/logout",{
             method:"POST",
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                "Authorization":`Bearer ${JSON.parse(localStorage.getItem('userinfo'))?.accessToken}`
             },
             credentials:"include"
 
