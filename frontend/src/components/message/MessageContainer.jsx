@@ -4,6 +4,7 @@ import useConversation from "../../zustand/useConversation";
 import useGetMessages from "../../hooks/useGetMessages";
 import { useAuthContext } from "../../context/AuthContext";
 import useListenMessages from "../../hooks/useListenMessages";
+
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   const { messages, loading } = useGetMessages();
@@ -18,6 +19,7 @@ const MessageContainer = () => {
       lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
   return (
     <>
       {/* component */}
