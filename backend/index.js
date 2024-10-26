@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(cookieParser());
 //
-app.use("/api/", authRouter.router);
+app.use("/api", authRouter.router);
 app.use("/api",messageRouter.router);
 app.use("/api",userRouter.router);
 app.use(express.static(path.join(__dir,"frontend/dist")));

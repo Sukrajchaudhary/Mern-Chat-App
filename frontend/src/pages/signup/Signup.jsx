@@ -92,7 +92,7 @@ const Signup = () => {
     } catch (error) {
       toast.error(error.message);
     } finally {
-      setLoading(false); // Set loading to false
+      setLoading(false); 
       setValue({
         username: "",
         password: "",
@@ -105,7 +105,7 @@ const Signup = () => {
 
   return (
     <section className="rounded-md p-2">
-      <div className="flex items-center justify-center bg-white px-4 py-5 sm:px-6 sm:py-10 lg:px-8">
+      <div className="flex items-center justify-center bg-white px-4 py-5 sm:px-2 sm:py-10 lg:px-8">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md border-2 p-4">
           <div className="mb-2">
             <img src={Logo} alt="Logo" className="rounded-full h-10" />

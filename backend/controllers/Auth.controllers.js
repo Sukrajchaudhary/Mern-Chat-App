@@ -22,6 +22,7 @@ exports.createUser = async (req, res) => {
   try {
     const { email, username, password } = req.body;
     const profilePath = req.files?.profile[0].path;
+    console.log("path",profilePath)
     if (
       [email, password, username].some(
         (fields) => !fields || fields.trim() === ""
